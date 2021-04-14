@@ -1,0 +1,124 @@
+﻿@model cadastro_cliente_mvc.Models.Pessoa
+@{
+    ViewData["Title"] = "Datalhes Pessoa";
+}
+
+<h2>Datalhes</h2>
+
+<div class="form-horizontal">
+
+    @if (Model.tipoPessoa == "F")
+    {
+        <h4>Pessoa Física</h4>
+        <hr />
+        <div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.CPF, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.CPF)
+                </div>
+            </div>
+            <div class="form-group">
+
+                <b>@Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Nome)
+                </div>
+
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Sobrenome)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.DataNascimento)
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h4>Pessoa Jurídica</h4>
+        <hr />
+        <div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.CNPJ, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.CNPJ)
+                </div>
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.RazaoSocial, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.RazaoSocial)
+                </div>
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.NomeFantasia, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.NomeFantasia)
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <b>@Html.LabelFor(model => model.CEP, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.CEP)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(model => model.Logradouro, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Logradouro)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Numero)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(model => model.Completemento, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Completemento)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Bairro)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b>@Html.LabelFor(model => model.UF, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.UF)
+        </div>
+    </div>
+
+</div>
+
+
+<div>
+    @Html.ActionLink("Voltar para lista", "Index")
+</div>

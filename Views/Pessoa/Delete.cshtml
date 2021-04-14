@@ -1,0 +1,86 @@
+﻿@model cadastro_cliente_mvc.Models.Pessoa
+@{
+    ViewData["Title"] = "Deletar Pessoa";
+}
+
+<h2>Deletar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    @Html.HiddenFor(model => model.pessoaId)
+
+    @if (Model.tipoPessoa == "F")
+    {
+        <h4>Pessoa Física</h4>
+        <hr />
+        <div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.CPF, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.CPF)
+                </div>
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Nome)
+                </div>
+
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Sobrenome)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.DataNascimento)
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h4>Pessoa Jurídica</h4>
+        <hr />
+        <div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.CNPJ, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.CNPJ)
+                </div>
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.RazaoSocial, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.RazaoSocial)
+                </div>
+            </div>
+            <div class="form-group">
+                <b>@Html.LabelFor(model => model.NomeFantasia, htmlAttributes: new { @class = "control-label col-md-2" })</b>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.NomeFantasia)
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+        </div>
+    </div>
+
+</div>
+}
+
+<div>
+    @Html.ActionLink("Voltar para lista", "Index")
+</div>
