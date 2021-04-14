@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["cadastro-cliente-mvc/cadastro-cliente-mvc/cadastro-cliente-mvc.csproj", "cadastro-cliente-mvc/cadastro-cliente-mvc/"]
-RUN dotnet restore "cadastro-cliente-mvc/cadastro-cliente-mvc/cadastro-cliente-mvc.csproj"
+COPY ["cadastro-cliente-mvc.csproj", ""]
+RUN dotnet restore "cadastro-cliente-mvc.csproj"
 COPY . .
-WORKDIR "/src/cadastro-cliente-mvc/cadastro-cliente-mvc"
+WORKDIR "/src"
 RUN dotnet build "cadastro-cliente-mvc.csproj" -c Release -o /app/build
 
 FROM build AS publish
